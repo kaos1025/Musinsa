@@ -1,0 +1,93 @@
+<!-- MyBatis 설정 파일에서 사용할 XML 문서 형식을 정의합니다. -->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.mapper.ItemMapper">
+    <resultMap id="itemInfoResultMap" type="com.example.demo.dto.ItemInfoDto">
+        <result column="item_no" property="itemNo"/>
+        <result column="brand_code" property="brandCode"/>
+        <result column="brand_name" property="brandName"/>
+        <result column="category_code" property="categoryCode"/>
+        <result column="category_name" property="categoryName"/>
+        <result column="price" property="price"/>
+    </resultMap>
+    <select id="getItem" resultMap="itemInfoResultMap">
+        SELECT A.ITEM_NO,
+            A.BRAND_CODE,
+            C.BRAND_NAME,
+            A.CATEGORY_CODE,
+            B.CATEGORY_NAME,
+            A.PRICE
+        FROM ITEMS A
+        JOIN CATEGORY B ON A.category_code = B.category_code
+        JOIN BRANDS C ON A.brand_code = C.brand_code
+        WHERE ITEM_NO = #{itemNo}
+    </select>
+    <insert id="addItem" parameterType="com.example.demo.dto.ItemReqDto" useGeneratedKeys="true" keyProperty="itemNo">
+        insert into Items(brand_code, category_code, price)
+        values (#{req.brandCode}, #{req.categoryCode}, #{req.price})
+    </insert>
+    <update id="setItem">
+        update items
+        set brand_code = #{req.brandCode},
+            category_code = #{req.categoryCode},
+            price = #{req.price}
+        where item_no = #{req.itemNo}
+    </update>
+    <delete id="deleteItem">
+        delete items
+        where item_no = #{itemNo}
+    </delete>
+
+    <select id="getItemInfoByBrandName" resultMap="itemInfoResultMap">
+        SELECT A.ITEM_NO,
+            A.BRAND_CODE,
+            C.BRAND_NAME,
+            A.CATEGORY_CODE,
+            B.CATEGORY_NAME,
+            A.PRICE
+        FROM ITEMS A
+        JOIN CATEGORY B ON A.category_code = B.category_code
+        JOIN BRANDS C ON A.brand_code = C.brand_code
+        WHERE C.BRAND_NAME = #{brandName}
+    </select>
+
+    <select id="getItemInfoByBrandCode" resultMap="itemInfoResultMap">
+        SELECT A.ITEM_NO,
+            A.BRAND_CODE,
+            C.BRAND_NAME,
+            A.CATEGORY_CODE,
+            B.CATEGORY_NAME,
+            A.PRICE
+        FROM ITEMS A
+        JOIN CATEGORY B ON A.category_code = B.category_code
+        JOIN BRANDS C ON A.brand_code = C.brand_code
+        WHERE A.BRAND_CODE = #{brandCode}
+    </select>
+
+    <select id="getItemInfoByCategoryName" resultMap="itemInfoResultMap">
+        SELECT A.ITEM_NO,
+            A.BRAND_CODE,
+            C.BRAND_NAME,
+            A.CATEGORY_CODE,
+            B.CATEGORY_NAME,
+            A.PRICE
+        FROM ITEMS A
+        JOIN CATEGORY B ON A.category_code = B.category_code
+        JOIN BRANDS C ON A.brand_code = C.brand_code
+        WHERE B.category_name = #{categoryName}
+    </select>
+
+    <select id="getItemInfoByCategoryCode" resultMap="itemInfoResultMap">
+        SELECT A.ITEM_NO,
+            A.BRAND_CODE,
+            C.BRAND_NAME,
+            A.CATEGORY_CODE,
+            B.CATEGORY_NAME,
+            A.PRICE
+        FROM ITEMS A
+        JOIN CATEGORY B ON A.category_code = B.category_code
+        JOIN BRANDS C ON A.brand_code = C.brand_code
+        WHERE A.category_code = #{categoryCode}
+    </select>
+</mapper>

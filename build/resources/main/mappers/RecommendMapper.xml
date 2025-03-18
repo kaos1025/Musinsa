@@ -1,0 +1,52 @@
+<!-- MyBatis 설정 파일에서 사용할 XML 문서 형식을 정의합니다. -->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.mapper.RecommendMapper">
+    <resultMap id="itemInfoResultMap" type="com.example.demo.dto.ItemInfoDto">
+        <result column="item_no" property="item"/>
+        <result column="brand_code" property="brandCode"/>
+        <result column="brand_name" property="brandName"/>
+        <result column="category_code" property="categoryCode"/>
+        <result column="category_name" property="categoryName"/>
+        <result column="price" property="price"/>
+    </resultMap>
+
+    <select id="getLowestPriceItem" resultMap="itemInfoResultMap">
+        SELECT B.category_name, C.brand_name, B.price
+        FROM ITEMS A
+        JOIN (
+            SELECT A.category_code, C.category_name,  MIN(A.price) AS price
+            FROM ITEMS A
+            JOIN CATEGORY C ON A.category_code = C.category_code
+            GROUP BY A.category_code
+        ) AS B ON A.category_code = B.category_code AND A.price = B.price
+        JOIN BRANDS C ON A.brand_code = C.brand_code
+        ORDER BY A.category_code
+    </select>
+
+    <resultMap id="BrandTotalPriceResultMap" type="com.example.demo.dto.BrandTotalPriceResDto">
+        <result column="brand_code" property="brandCode"/>
+        <result column="brand_name" property="brandName"/>
+        <result column="total_price" property="totalPrice"/>
+    </resultMap>
+    <select id="getBrandTotalPrice" resultMap="BrandTotalPriceResultMap">
+        SELECT A.brand_code, B.brand_name, SUM(A.price) AS total_price
+        FROM ITEMS A
+        JOIN BRANDS B ON A.brand_code = B.brand_code
+        GROUP BY A.brand_code
+    </select>
+
+    <select id="getCategoryPrice" resultMap="itemInfoResultMap">
+        SELECT B.category_name, C.brand_name, B.price
+        FROM ITEMS A
+        JOIN (
+        SELECT A.category_code, C.category_name,  MIN(A.price) AS price
+        FROM ITEMS A
+        JOIN CATEGORY C ON A.category_code = C.category_code
+        GROUP BY A.category_code
+        ) AS B ON A.category_code = B.category_code AND A.price = B.price
+        JOIN BRANDS C ON A.brand_code = C.brand_code
+        ORDER BY A.category_code
+    </select>
+</mapper>
