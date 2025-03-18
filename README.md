@@ -19,7 +19,7 @@
   - 테스트 : JUnit, Mockito
 
 API 기능 설명
--Item Management API - 상품 관리 API
+- Item Management API - 상품 관리 API
   * 상품등록 / 수정 / 삭제 API
   * 상품조회 API
     - itemNo로 조회
@@ -29,17 +29,17 @@ API 기능 설명
     - 브랜드명으로 해당 브랜드로 등록된 상품정보 조회
 
 
-카테고리 Management API - 카테고리 관리 API
-  - 카테고리 등록 API
+- 카테고리 Management API - 카테고리 관리 API
+  * 카테고리 등록 API
   
-Brand Management API - 브랜드 관리 API
-  - 브랜드 등록 / 수정 / 삭제 / 조회 API
+- Brand Management API - 브랜드 관리 API
+  * 브랜드 등록 / 수정 / 삭제 / 조회 API
 
-코디 추천 API
-  - 과제에서 요청한 조회 API 
-  getLowestPriceItem - 카테고리 별 최저가 브랜드, 상품가격, 총액 조회
-  getLowestPriceBrand - 단일 브랜드로 모든 카테고리 상품을 구매할 때 최저가격에 판매하는 브랜드와 카테고리의 상품가격, 총액 조회
-  getCategoryPrice - 카테고리 이름으로 최저, 최고 가격 브랜드와 상품 가격을 조회하는 API
+- 코디 추천 API
+  * 과제에서 요청한 조회 API 
+    - getLowestPriceItem - 카테고리 별 최저가 브랜드, 상품가격, 총액 조회
+    - getLowestPriceBrand - 단일 브랜드로 모든 카테고리 상품을 구매할 때 최저가격에 판매하는 브랜드와 카테고리의 상품가격, 총액 조회
+    - getCategoryPrice - 카테고리 이름으로 최저, 최고 가격 브랜드와 상품 가격을 조회하는 API
 
 
 코드 빌드
