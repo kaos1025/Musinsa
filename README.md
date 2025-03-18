@@ -50,6 +50,7 @@ cd Musinsa]
 
 
 - 빌드
+
 bash
 [./gradlew clean build]
 
