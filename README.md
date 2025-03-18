@@ -18,6 +18,22 @@
   - API 문서화 : Swagger (Springdoc OpenAPI)
   - 테스트 : JUnit, Mockito
 
+
+프로젝트 구조 
+![프로젝트 구조](https://github.com/user-attachments/assets/26cedfb3-2c09-4348-ab73-3f50e931a71b)
+
+
+ 
+ - controller/: HTTP 요청을 처리하고, 사용자에게 응답을 반환하는 컨트롤러 클래스들이 위치합니다.
+ - service/: 비즈니스 로직을 담당하는 서비스 클래스들이 위치합니다.
+ - dto/ : 데이터 전송 객체(DTO)
+ - exception/ : 예외 처리 관련 클래스
+ - static/: 정적 자원(이미지, CSS, JavaScript 파일 등)이 위치합니다.
+ - templates/: Thymeleaf 템플릿 파일들이 위치합니다.
+ - application.properties: 애플리케이션의 설정 파일입니다.
+
+
+
 API 기능 설명
 - Item Management API - 상품 관리 API
   * 상품등록 / 수정 / 삭제 API
