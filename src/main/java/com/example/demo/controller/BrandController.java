@@ -5,6 +5,7 @@ import com.example.demo.dto.BrandReqDto;
 import com.example.demo.dto.ItemInfoDto;
 import com.example.demo.exception.CustomException;
 import com.example.demo.service.BrandService;
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,6 +26,7 @@ public class BrandController {
         this.BrandService = brandService;
     }
 
+    @Operation(summary = "브랜드 조회", description = "브랜드 코드(brandCode)를 입력받아 브랜드 정보를 조회합니다.")
     @GetMapping("/{brandCode}")
     public ResponseEntity<BrandInfoDto> getBrand(@PathVariable("brandCode") Integer brandCode)
     {
@@ -36,6 +38,7 @@ public class BrandController {
         return ResponseEntity.ok(brand);
     }
 
+    @Operation(summary = "브랜드 등록")
     @PostMapping
     public ResponseEntity<List<Integer>> addBrand(@Valid @RequestBody List<BrandReqDto> req)
     {
@@ -43,7 +46,8 @@ public class BrandController {
         return ResponseEntity.ok(brandCodeList);
     }
 
-    @PutMapping("/{brandCode}")
+    @Operation(summary = "브랜드 수정")
+    @PutMapping
     public ResponseEntity<String> setBrand(@Valid @RequestBody BrandReqDto req)
     {
         if (req.getBrandCode() == null || req.getBrandCode() <= 0) {
@@ -54,6 +58,7 @@ public class BrandController {
         return ResponseEntity.ok("브랜드가 성공적으로 수정되었습니다.");
     }
 
+    @Operation(summary = "브랜드 삭제")
     @DeleteMapping("/{brandCode}")
     public ResponseEntity<String> deleteBrand(@PathVariable("brandCode")Integer brandCode)
     {

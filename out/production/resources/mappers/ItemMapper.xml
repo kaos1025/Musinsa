@@ -27,7 +27,7 @@
         insert into Items(brand_code, category_code, price)
         values (#{req.brandCode}, #{req.categoryCode}, #{req.price})
     </insert>
-    <update id="setItem">
+    <update id="setItem" parameterType="com.example.demo.dto.ItemReqDto">
         update items
         set brand_code = #{req.brandCode},
             category_code = #{req.categoryCode},

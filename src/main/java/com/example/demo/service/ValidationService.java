@@ -19,13 +19,13 @@ public class ValidationService {
     public void validateBrandCode(Integer brandCode)
     {
         if(validationMapper.existsBrandCode(brandCode))
-            throw new CustomException("존재하지 않는 브랜드입니다 : " + brandCode, HttpStatus.NO_CONTENT);
+            throw new CustomException("존재하지 않는 브랜드입니다 : " + brandCode, HttpStatus.NOT_FOUND);
     }
 
     public void validateCategoryCode(Integer categoryCode)
     {
         if(validationMapper.existsCategoryCode(categoryCode))
-            throw new CustomException("존재하지 않는 카테고리입니다 : " + categoryCode, HttpStatus.NO_CONTENT);
+            throw new CustomException("존재하지 않는 카테고리입니다 : " + categoryCode, HttpStatus.NOT_FOUND);
     }
 
     public void validateBrand(String brandName)

@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @OpenAPIDefinition(
-        info = @Info(title = "API 문서", version = "1.0", description = "API Documentation")
+        info = @Info(title = "Musinsa API 문서", version = "1.0", description = "Backend Engineer 과제")
 )
 public class OpenAPIConfig {
 }

@@ -23,6 +23,7 @@ public class CategoryController {
         this.categoryService = categoryService;
     }
 
+    @Operation(summary = "카테고리 등록")
     @PostMapping
     public ResponseEntity<List<Integer>> AddCategory(@Valid @RequestBody List<CategoryReqDto> req)
     {
