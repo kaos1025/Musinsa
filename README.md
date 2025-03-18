@@ -1,27 +1,27 @@
 개요  
   이 프로젝트는 Spring Boot 프레임워크를 기반으로 개발되었으며, 아래와 같은 API들로 구성됩니다.
-      상품 조회/등록/수정/삭제 API
-      브랜드 조회/등록/수정/삭제 API
-      카테고리 등록 API
-      과제에서 요청한 조회 API
+      - 상품 조회/등록/수정/삭제 API
+      - 브랜드 조회/등록/수정/삭제 API
+      - 카테고리 등록 API
+      - 과제에서 요청한 조회 API
 
 기능
-  브랜드 관리: 새로운 패션 브랜드를 등록하고, 기존 브랜드 정보를 수정 및 삭제할 수 있습니다.
-  상품 관리: 다양한 패션 아이템을 등록하고, 수정 및 삭제할 수 있습니다.
-  상품 추천: 사용자가 원하는 상품을 키워드로 검색하고, 필터링된 결과를 확인할 수 있습니다.
+  - 브랜드 관리: 새로운 패션 브랜드를 등록하고, 기존 브랜드 정보를 수정 및 삭제할 수 있습니다.
+  - 상품 관리: 다양한 패션 아이템을 등록하고, 수정 및 삭제할 수 있습니다.
+  - 상품 추천: 사용자가 원하는 상품을 키워드로 검색하고, 필터링된 결과를 확인할 수 있습니다.
 
 기술 스택
-Backend	: Java, Spring Boot, Spring MVC
-Database :	H2 Database (개발 및 테스트 환경), MySQL 또는 PostgreSQL (프로덕션 환경)
-ORM	: MyBatis
-Build Tool : Gradle
-API 문서화 : Swagger (Springdoc OpenAPI)
-테스트 : JUnit, Mockito
+  - Backend	: Java, Spring Boot, Spring MVC
+  - Database :	H2 Database (개발 및 테스트 환경), MySQL 또는 PostgreSQL (프로덕션 환경)
+  - ORM	: MyBatis
+  - Build Tool : Gradle
+  - API 문서화 : Swagger (Springdoc OpenAPI)
+  - 테스트 : JUnit, Mockito
 
 API 기능 설명
-Item Management API - 상품 관리 API
-  상품등록 / 수정 / 삭제 API
-  상품조회 API
+-Item Management API - 상품 관리 API
+  * 상품등록 / 수정 / 삭제 API
+  * 상품조회 API
     - itemNo로 조회
     - 카테고리코드로 해당 카테고리코드로 등록된 상품정보 조회
     - 카테고리명으로 해당 카테고리코드로 등록된 상품정보 조회
