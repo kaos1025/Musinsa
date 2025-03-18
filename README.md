@@ -70,18 +70,17 @@ bash
 
 
 
-웹 브라우저에서 접속 : [http://localhost:8080](http://localhost:8080/)**
+- 웹 브라우저에서 접속 : [http://localhost:8080](http://localhost:8080/)**
 
-API 문서 (Swagger) 확인 : http://localhost:8080/swagger-ui/index.html
-Swagger UI에서 API 목록을 확인하고, 직접 테스트 가능**
+- API 문서 (Swagger) 확인 : http://localhost:8080/swagger-ui/index.html
+- Swagger UI에서 API 목록을 확인하고, 직접 테스트 가능
 
-API 테스트 방법
-Swagger를 통해 API를 직접 호출할 수 있으며, Postman이나 cURL을 사용할 수도 있음**
+- API 테스트 방법: Swagger를 통해 API를 직접 호출할 수 있으며, Postman이나 cURL을 사용할 수도 있음**
 
 
 개선점 
 1) Swagger에 접속하면 Failed to load API definition.라는 문구와 함께 아래 화면이 뜨는 오류
-원인은 spring Boot에서 글로벌 예외 처리를 위한 어노테이션(@ControllerAdvice)과 Swagger 사이에 일어난 충돌로 수정 필요
+  - 원인 : spring Boot에서 글로벌 예외 처리를 위한 어노테이션(@ControllerAdvice)과 Swagger 사이에 일어난 충돌로 수정 필요
 
 2) Integration Test 추가 작성 필요 
 
