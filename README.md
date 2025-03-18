@@ -60,32 +60,9 @@ API 기능 설명
     - getCategoryPrice - 카테고리 이름으로 최저, 최고 가격 브랜드와 상품 가격을 조회하는 API
 
 
-코드 빌드
-- 프로젝트 클론 
-bash
-[git clone https://github.com/kaos1025/Musinsa.git
-cd Musinsa]
+코드 빌드/ 테스트 / 실행
 
-
-- 빌드
-
-bash
-[./gradlew clean build]
-
-
-테스트 (Test)
-- JUnit과 Mockito를 사용하여 단위 테스트 및 통합 테스트 실행
-
-bash
-[./gradlew test]
-
-
-애플리케이션 실행 (Run)
-- Spring Boot 애플리케이션 실행
-
-bash
-[./gradlew bootRun]
-
+![코드 빌드 테스트 실행 방법](https://github.com/user-attachments/assets/567671a8-480c-4269-a1b3-bda7df317190)
 
 
 
