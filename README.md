@@ -43,29 +43,29 @@ API 기능 설명
 
 
 코드 빌드
-**프로젝트 클론 
+- 프로젝트 클론 
 bash
-git clone https://github.com/kaos1025/Musinsa.git
-cd Musinsa
+[git clone https://github.com/kaos1025/Musinsa.git
+cd Musinsa]
 
 
-**빌드
+- 빌드
 bash
-./gradlew clean build
+[./gradlew clean build]
 
 
-**테스트 (Test)
-JUnit과 Mockito를 사용하여 단위 테스트 및 통합 테스트 실행
-
-bash
-./gradlew test
-
-
-**애플리케이션 실행 (Run)
-Spring Boot 애플리케이션 실행
+테스트 (Test)
+- JUnit과 Mockito를 사용하여 단위 테스트 및 통합 테스트 실행
 
 bash
-./gradlew bootRun
+[./gradlew test]
+
+
+애플리케이션 실행 (Run)
+- Spring Boot 애플리케이션 실행
+
+bash
+[./gradlew bootRun]
 
 
 
