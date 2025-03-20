@@ -1,10 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.demo.service.BrandServiceTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2025-03-18T07:55:54.405Z" hostname="갤럭시북" time="0.263">
+<testsuite name="com.example.demo.service.BrandServiceTest" tests="4" skipped="0" failures="2" errors="0" timestamp="2025-03-20T15:38:15.366Z" hostname="갤럭시북" time="0.339">
   <properties/>
-  <testcase name="setBrand_ShouldUpdateBrand()" classname="com.example.demo.service.BrandServiceTest" time="0.223"/>
-  <testcase name="deleteBrand_ShouldDeleteBrand()" classname="com.example.demo.service.BrandServiceTest" time="0.005"/>
-  <testcase name="getBrand_ShouldReturnBrandInfo()" classname="com.example.demo.service.BrandServiceTest" time="0.018"/>
-  <testcase name="addBrand_ShouldValidateAndAddBrands()" classname="com.example.demo.service.BrandServiceTest" time="0.013"/>
+  <testcase name="setBrand_ShouldUpdateBrand()" classname="com.example.demo.service.BrandServiceTest" time="0.261">
+    <failure message="com.example.demo.exception.CustomException: 존재하지 않는 브랜드 코드입니다. : 101" type="com.example.demo.exception.CustomException">com.example.demo.exception.CustomException: 존재하지 않는 브랜드 코드입니다. : 101
+	at app//com.example.demo.service.BrandService.setBrand(BrandService.java:51)
+	at app//com.example.demo.service.BrandServiceTest.setBrand_ShouldUpdateBrand(BrandServiceTest.java:77)
+	at java.base@23.0.2/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base@23.0.2/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base@23.0.2/java.util.ArrayList.forEach(ArrayList.java:1597)
+</failure>
+  </testcase>
+  <testcase name="deleteBrand_ShouldRemoveBrand()" classname="com.example.demo.service.BrandServiceTest" time="0.006">
+    <failure message="com.example.demo.exception.CustomException: 존재하지 않는 브랜드 코드입니다. : 101" type="com.example.demo.exception.CustomException">com.example.demo.exception.CustomException: 존재하지 않는 브랜드 코드입니다. : 101
+	at app//com.example.demo.service.BrandService.deleteBrand(BrandService.java:60)
+	at app//com.example.demo.service.BrandServiceTest.deleteBrand_ShouldRemoveBrand(BrandServiceTest.java:87)
+	at java.base@23.0.2/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base@23.0.2/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base@23.0.2/java.util.ArrayList.forEach(ArrayList.java:1597)
+</failure>
+  </testcase>
+  <testcase name="getBrand_ShouldReturnBrandInfo()" classname="com.example.demo.service.BrandServiceTest" time="0.043"/>
+  <testcase name="addBrand_ShouldValidateAndAddBrands()" classname="com.example.demo.service.BrandServiceTest" time="0.025"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

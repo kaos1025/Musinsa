@@ -1,20 +1,24 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.demo.mapper.BrandMapper">
-    <select id="getBrand" resultType="com.example.demo.dto.BrandInfoDto">
+    <resultMap id="brandInfoResultMap" type="com.example.demo.dto.BrandInfoDto">
+        <result column="brand_code" property="brandCode"/>
+        <result column="brand_name" property="brandName"/>
+    </resultMap>
+    <select id="getBrand" resultMap="brandInfoResultMap">
         SELECT brand_code,
         brand_name
         FROM BRANDS
         WHERE brand_code = #{brandCode}
     </select>
-    <insert id="addBrand" parameterType="com.example.demo.dto.BrandReqDto">
+    <insert id="addBrand" parameterType="com.example.demo.dto.BrandReqDto" useGeneratedKeys="true" keyProperty="brandCode">
         insert into brands(brand_name)
-        values (#{brandName})
+        values (#{req.brandName})
     </insert>
     <update id="setBrand">
         update brands
         set brand_name = #{req.brandName}
-        where brand_code = #{brandCode}
+        where brand_code = #{req.brandCode}
     </update>
     <delete id="deleteBrand">
         delete brands

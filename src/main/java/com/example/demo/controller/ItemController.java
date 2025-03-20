@@ -27,6 +27,7 @@ public class ItemController {
         this.itemService = itemService;
     }
 
+
     @Operation(summary = "상품 조회", description = "상품 번호(itemNo)를 입력받아 해당 상품 정보를 조회합니다.")
     @GetMapping("/{itemNo}")
     public ResponseEntity<ItemInfoDto> getItem(@PathVariable("itemNo")BigInteger itemNo)

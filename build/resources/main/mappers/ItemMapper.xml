@@ -4,7 +4,7 @@
 
 <mapper namespace="com.example.demo.mapper.ItemMapper">
     <resultMap id="itemInfoResultMap" type="com.example.demo.dto.ItemInfoDto">
-        <result column="item_no" property="item"/>
+        <result column="item_no" property="itemNo"/>
         <result column="brand_code" property="brandCode"/>
         <result column="brand_name" property="brandName"/>
         <result column="category_code" property="categoryCode"/>
@@ -23,16 +23,16 @@
         JOIN BRANDS C ON A.brand_code = C.brand_code
         WHERE ITEM_NO = #{itemNo}
     </select>
-    <insert id="addItem" parameterType="com.example.demo.dto.ItemReqDto">
+    <insert id="addItem" parameterType="com.example.demo.dto.ItemReqDto" useGeneratedKeys="true" keyProperty="itemNo">
         insert into Items(brand_code, category_code, price)
-        values (#{brandCode}, #{categoryCode}, #{price})
+        values (#{req.brandCode}, #{req.categoryCode}, #{req.price})
     </insert>
-    <update id="setItem">
+    <update id="setItem" parameterType="com.example.demo.dto.ItemReqDto">
         update items
         set brand_code = #{req.brandCode},
             category_code = #{req.categoryCode},
             price = #{req.price}
-        where item_no = #{itemNo}
+        where item_no = #{req.itemNo}
     </update>
     <delete id="deleteItem">
         delete items

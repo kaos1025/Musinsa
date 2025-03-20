@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.demo.service.ItemServiceTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2025-03-18T07:55:54.713Z" hostname="갤럭시북" time="0.067">
+<testsuite name="com.example.demo.service.ItemServiceTest" tests="8" skipped="0" failures="1" errors="0" timestamp="2025-03-20T15:38:15.751Z" hostname="갤럭시북" time="0.102">
   <properties/>
-  <testcase name="getItemInfoByCategoryName_ShouldReturnItemList()" classname="com.example.demo.service.ItemServiceTest" time="0.052"/>
-  <testcase name="addItem_ShouldValidateAndAddItems()" classname="com.example.demo.service.ItemServiceTest" time="0.005"/>
-  <testcase name="setItem_ShouldUpdateItem()" classname="com.example.demo.service.ItemServiceTest" time="0.002"/>
-  <testcase name="deleteItem_ShouldDeleteItem()" classname="com.example.demo.service.ItemServiceTest" time="0.003"/>
-  <testcase name="getItem_ShouldReturnItemInfo()" classname="com.example.demo.service.ItemServiceTest" time="0.002"/>
-  <testcase name="getItemInfoByBrandCode_ShouldReturnItemList()" classname="com.example.demo.service.ItemServiceTest" time="0.002"/>
+  <testcase name="getItemInfoByCategoryCode_ShouldReturnItems()" classname="com.example.demo.service.ItemServiceTest" time="0.066"/>
+  <testcase name="getItemInfoByBrandCode_ShouldReturnItems()" classname="com.example.demo.service.ItemServiceTest" time="0.003"/>
+  <testcase name="getItem_ShouldReturnItem()" classname="com.example.demo.service.ItemServiceTest" time="0.004"/>
+  <testcase name="getItemInfoByCategoryName_ShouldReturnItems()" classname="com.example.demo.service.ItemServiceTest" time="0.004"/>
+  <testcase name="getItemInfoByBrandName_ShouldReturnItems()" classname="com.example.demo.service.ItemServiceTest" time="0.003"/>
+  <testcase name="deleteItem_ShouldRemoveItem()" classname="com.example.demo.service.ItemServiceTest" time="0.001"/>
+  <testcase name="addItem_ShouldValidateAndAddItems()" classname="com.example.demo.service.ItemServiceTest" time="0.006"/>
+  <testcase name="setItem_ShouldUpdateItem()" classname="com.example.demo.service.ItemServiceTest" time="0.009">
+    <failure message="com.example.demo.exception.CustomException: 존재하지 않는 상품입니다 : 1" type="com.example.demo.exception.CustomException">com.example.demo.exception.CustomException: 존재하지 않는 상품입니다 : 1
+	at app//com.example.demo.service.ItemService.setItem(ItemService.java:61)
+	at app//com.example.demo.service.ItemServiceTest.setItem_ShouldUpdateItem(ItemServiceTest.java:97)
+	at java.base@23.0.2/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base@23.0.2/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base@23.0.2/java.util.ArrayList.forEach(ArrayList.java:1597)
+</failure>
+  </testcase>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
